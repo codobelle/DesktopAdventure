@@ -8,10 +8,12 @@ public class PlayerHealth : MonoBehaviour
     int sceneIndex;
     public int waitingDie = 3;
     CircleCollider2D bc2d;
+    Animator anim;
     // Use this for initialization
     void Start()
     {
         bc2d = GetComponent<CircleCollider2D>();
+        anim = GetComponent<Animator>();
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
 
     }
@@ -25,6 +27,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (coll.gameObject.CompareTag("Enemy"))
         {
+            anim.SetTrigger("Die");
             bc2d.isTrigger = true;
             StartCoroutine(WaitForDie());
         }
