@@ -7,9 +7,10 @@ public class Teleportation : MonoBehaviour
     public Transform destination;
     public GameObject player;
 
-    void OnCollisionEnter2D(Collision2D coll)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (coll.gameObject == player)
+        if (other.gameObject.CompareTag("Grounded"))
+        
             Teleport();
     }
 
