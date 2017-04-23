@@ -7,11 +7,11 @@ public class PlayerHealth : MonoBehaviour
 {
     int sceneIndex;
     public int waitingDie = 3;
-    BoxCollider2D bc2d;
+    CircleCollider2D bc2d;
     // Use this for initialization
     void Start()
     {
-        bc2d = GetComponent<BoxCollider2D>();
+        bc2d = GetComponent<CircleCollider2D>();
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
 
     }
