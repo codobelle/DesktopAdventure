@@ -8,8 +8,11 @@ public class CanvasManager : MonoBehaviour {
     int sceneIndex;
     public GameObject help, team;
     // Use this for initialization
-    void Start () {
+    void Start ()
+    {
+        Time.timeScale = 1.0f;
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
+        
     }
 	
 	// Update is called once per frame
@@ -38,4 +41,5 @@ public class CanvasManager : MonoBehaviour {
     {
         Application.OpenURL("https://play.google.com/store/apps/details?id=com.Casapciuc.Celest");
     }
+   
 }
