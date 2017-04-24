@@ -3,10 +3,12 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
+    public AudioClip Jump,Jumped;
+    private AudioSource source;
     [HideInInspector]
     public bool facingRight = true;
     [HideInInspector]
-    public bool jump = false;
+    public bool jump = false,jumped = false;
     public float maxSpeed = 5f;
     public float jumpForce = 1000f;
     public Transform groundCheck;
@@ -20,6 +22,7 @@ public class PlayerController : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
+        source = GetComponent<AudioSource>();
         // anim = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
     }
@@ -42,6 +45,7 @@ public class PlayerController : MonoBehaviour
         grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
         if (Input.GetButtonDown("Jump") && grounded)
         {
+            source.PlayOneShot(Jump, 0.3F);
             jump = true;
         }
     }
@@ -62,6 +66,7 @@ public class PlayerController : MonoBehaviour
             grounded = false;
             //anim.SetTrigger("Jump");
             rb2d.AddForce(new Vector2(0f, jumpForce));
+            jumped = true;
         }
     }
 

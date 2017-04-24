@@ -4,11 +4,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class FinishLevel : MonoBehaviour {
-    public int waitingNextLevel;
+    public int TimeWaitingNextLevel;
     int sceneIndex;
     public GameObject particle;
-    // Use this for initialization
-    void Start () {
+    Animator anim;
+        // Use this for initialization
+        void Start ()
+    {
+        anim = GetComponent<Animator>();
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
 
     }
@@ -21,13 +24,14 @@ public class FinishLevel : MonoBehaviour {
     {
         if (coll.gameObject.CompareTag("Player"))
         {
+            anim.SetTrigger("HisTouch");
             Instantiate(particle, transform.position, transform.rotation);
             StartCoroutine(WaitForNextLevel());
         }
     }
     IEnumerator WaitForNextLevel()
     {
-        yield return new WaitForSeconds(waitingNextLevel);
+        yield return new WaitForSeconds(TimeWaitingNextLevel);
         SceneManager.LoadScene(sceneIndex+1);
     }
 }
