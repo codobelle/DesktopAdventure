@@ -16,7 +16,6 @@ public class FinishLevel : MonoBehaviour
     void Start()
     {
         source = GetComponent<AudioSource>();
-        print(SceneManager.sceneCountInBuildSettings);
         anim = GetComponent<Animator>();
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
     }

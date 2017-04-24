@@ -32,7 +32,8 @@ public class PlayerHealth : MonoBehaviour
             bc2d.isTrigger = true;
             StartCoroutine(WaitForDie());
         }
-
+        if (coll.gameObject.CompareTag("SweetHeart"))
+            anim.SetTrigger("SweetFind");
     }
     IEnumerator WaitForDie()
     {

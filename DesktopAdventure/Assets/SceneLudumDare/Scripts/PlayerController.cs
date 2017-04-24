@@ -3,19 +3,19 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
-    public AudioClip Jump,Jumped;
+    public AudioClip Jump, Jumped;
     private AudioSource source;
     [HideInInspector]
     public bool facingRight = true;
     [HideInInspector]
-    public bool jump = false,jumped = false;
+    public bool jump = false, jumped = false;
     public float maxSpeed = 5f;
     public float jumpForce = 1000f;
     public Transform groundCheck;
 
 
     private bool grounded = false;
-    //private Animator anim;
+    private Animator anim;
     private Rigidbody2D rb2d;
 
 
@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         source = GetComponent<AudioSource>();
-        // anim = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
     }
 
@@ -53,6 +53,12 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         float h = Input.GetAxis("Horizontal");
+        if (h != 0)
+        {
+            anim.SetTrigger("Walk");
+        }
+        else
+            anim.SetTrigger("Idle");
 
         rb2d.velocity = new Vector2(h * maxSpeed * Time.deltaTime, rb2d.velocity.y);
         if (h > 0 && !facingRight)
@@ -64,7 +70,7 @@ public class PlayerController : MonoBehaviour
         {
             jump = false;
             grounded = false;
-            //anim.SetTrigger("Jump");
+            anim.SetTrigger("Jump");
             rb2d.AddForce(new Vector2(0f, jumpForce));
             jumped = true;
         }
