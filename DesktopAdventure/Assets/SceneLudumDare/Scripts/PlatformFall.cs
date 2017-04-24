@@ -3,8 +3,6 @@ using System.Collections;
 
 public class PlatformFall : MonoBehaviour
 {
-    public AudioClip Death;
-    private AudioSource source;
     public float fallDelay = 1f;
     
     private Rigidbody2D rb2d;

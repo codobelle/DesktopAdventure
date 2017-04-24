@@ -12,7 +12,8 @@ public class VirusAnimation : MonoBehaviour {
     }
     void OnCollisionEnter2D(Collision2D coll)
     {
-        anim.SetTrigger("PlayerTouch");
+        if (coll.gameObject.CompareTag("Player"))
+            anim.SetTrigger("PlayerTouch");
     }
 
     }
