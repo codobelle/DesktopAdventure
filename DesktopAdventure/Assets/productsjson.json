@@ -1,0 +1,372 @@
+[
+  {
+    "Product": "Egg boiled",
+    "Quantity": 1,
+    "Calories": 80
+  },
+  {
+    "Product": "Egg Poached",
+    "Quantity": 1,
+    "Calories": 80
+  },
+  {
+    "Product": "Egg Fried",
+    "Quantity": 1,
+    "Calories": 110
+  },
+  {
+    "Product": "Egg Omelet",
+    "Quantity": 1,
+    "Calories": 120
+  },
+  {
+    "Product": "Bread slice",
+    "Quantity": 1,
+    "Calories": 45
+  },
+  {
+    "Product": "Bread slice with butter",
+    "Quantity": 1,
+    "Calories": 90
+  },
+  {
+    "Product": "Chapati",
+    "Quantity": 1,
+    "Calories": 60
+  },
+  {
+    "Product": "Puri",
+    "Quantity": 1,
+    "Calories": 75
+  },
+  {
+    "Product": "Paratha",
+    "Quantity": 1,
+    "Calories": 150
+  },
+  {
+    "Product": "Subji",
+    "Quantity": "1 cup",
+    "Calories": 150
+  },
+  {
+    "Product": "Idli",
+    "Quantity": 1,
+    "Calories": 100
+  },
+  {
+    "Product": "Dosa Plain",
+    "Quantity": 1,
+    "Calories": 120
+  },
+  {
+    "Product": "Dosa Masala",
+    "Quantity": 1,
+    "Calories": 250
+  },
+  {
+    "Product": "Sambhar",
+    "Quantity": "1 cup",
+    "Calories": 150
+  },
+  {
+    "Product": "Cooked Rice/Plain",
+    "Quantity": "1 cup",
+    "Calories": 120
+  },
+  {
+    "Product": "Cooked Rice/Fried",
+    "Quantity": "1 cup",
+    "Calories": 150
+  },
+  {
+    "Product": "Chapati",
+    "Quantity": 1,
+    "Calories": 60
+  },
+  {
+    "Product": "Puri",
+    "Quantity": 1,
+    "Calories": 75
+  },
+  {
+    "Product": "Paratha",
+    "Quantity": 1,
+    "Calories": 150
+  },
+  {
+    "Product": "Nan",
+    "Quantity": 1,
+    "Calories": 150
+  },
+  {
+    "Product": "Dal",
+    "Quantity": "1 cup",
+    "Calories": 150
+  },
+  {
+    "Product": "Sambhar",
+    "Quantity": "1 cup",
+    "Calories": 150
+  },
+  {
+    "Product": "Curd",
+    "Quantity": "1 cup",
+    "Calories": 100
+  },
+  {
+    "Product": "Curry/Vegetable",
+    "Quantity": "1 cup",
+    "Calories": 150
+  },
+  {
+    "Product": "Curry/Meat",
+    "Quantity": "1 cup",
+    "Calories": 175
+  },
+  {
+    "Product": "Salad",
+    "Quantity": "1 cup",
+    "Calories": 100
+  },
+  {
+    "Product": "Papad",
+    "Quantity": 1,
+    "Calories": 45
+  },
+  {
+    "Product": "Cutlet",
+    "Quantity": 1,
+    "Calories": 75
+  },
+  {
+    "Product": "Pickle",
+    "Quantity": "1 tsp",
+    "Calories": 30
+  },
+  {
+    "Product": "Soup/Clear",
+    "Quantity": "1 cup",
+    "Calories": 75
+  },
+  {
+    "Product": "Soup/Heavy",
+    "Quantity": "1 cup",
+    "Calories": 75
+  },
+  {
+    "Product": "Tea/Black/without sugar",
+    "Quantity": "1 cup",
+    "Calories": 10
+  },
+  {
+    "Product": "Coffee/Black/without sugar",
+    "Quantity": "1 cup",
+    "Calories": 10
+  },
+  {
+    "Product": "Tea with milk & sugar",
+    "Quantity": "1 cup",
+    "Calories": 45
+  },
+  {
+    "Product": "Coffee with milk & sugar",
+    "Quantity": "1 cup",
+    "Calories": 45
+  },
+  {
+    "Product": "Milk without sugar",
+    "Quantity": "1 cup",
+    "Calories": 60
+  },
+  {
+    "Product": "Milk with sugar",
+    "Quantity": "1 cup",
+    "Calories": 75
+  },
+  {
+    "Product": "Milk with sugar, Horlicks",
+    "Quantity": "1 cup",
+    "Calories": 120
+  },
+  {
+    "Product": "Fruit Juice, concentrated",
+    "Quantity": "1 cup",
+    "Calories": 120
+  },
+  {
+    "Product": "Soft Drinks",
+    "Quantity": "1 bottle",
+    "Calories": 90
+  },
+  {
+    "Product": "Beer",
+    "Quantity": "1 bottle",
+    "Calories": 200
+  },
+  {
+    "Product": "Soda",
+    "Quantity": "1 bottle",
+    "Calories": 10
+  },
+  {
+    "Product": "Alcohol neat",
+    "Quantity": "1 peg, small",
+    "Calories": 75
+  },
+  {
+    "Product": "Porridge",
+    "Quantity": "1 cup",
+    "Calories": 150
+  },
+  {
+    "Product": "Jam",
+    "Quantity": "1 tsp",
+    "Calories": 30
+  },
+  {
+    "Product": "Butter",
+    "Quantity": "1 tsp",
+    "Calories": 50
+  },
+  {
+    "Product": "Ghee",
+    "Quantity": "1 tsp",
+    "Calories": 50
+  },
+  {
+    "Product": "Sugar",
+    "Quantity": "1 tsp",
+    "Calories": 30
+  },
+  {
+    "Product": "Biscuit",
+    "Quantity": 1,
+    "Calories": 30
+  },
+  {
+    "Product": "Fried Nuts",
+    "Quantity": "1 cup",
+    "Calories": 300
+  },
+  {
+    "Product": "Puddings",
+    "Quantity": "1 cup",
+    "Calories": 200
+  },
+  {
+    "Product": "Ice-cream",
+    "Quantity": "1 cup",
+    "Calories": 200
+  },
+  {
+    "Product": "Milk-Shake",
+    "Quantity": "1 glass",
+    "Calories": 200
+  },
+  {
+    "Product": "Wafers",
+    "Quantity": "1 pkt",
+    "Calories": 120
+  },
+  {
+    "Product": "Samosa",
+    "Quantity": 1,
+    "Calories": 100
+  },
+  {
+    "Product": "Bhel Puri/Pani Puri",
+    "Quantity": "1 helping",
+    "Calories": 150
+  },
+  {
+    "Product": "Kebab",
+    "Quantity": "1 plate",
+    "Calories": 150
+  },
+  {
+    "Product": "Indian sweets/mithai",
+    "Quantity": "1 pc",
+    "Calories": 150
+  },
+  {
+    "Product": "Bread Slices with Butter & Jam/Cheese, etc.",
+    "Quantity": 1,
+    "Calories": 120
+  },
+  {
+    "Product": "Breakfast cereal with milk sweetened",
+    "Quantity": "1 cup",
+    "Calories": 130
+  },
+  {
+    "Product": "Porridge & Milk",
+    "Quantity": "1 cup",
+    "Calories": 120
+  },
+  {
+    "Product": "Porridge & Milk sweetened",
+    "Quantity": "1 cup",
+    "Calories": 150
+  },
+  {
+    "Product": "Sausage, bacon,ham etc. fried",
+    "Quantity": "1 helping",
+    "Calories": 120
+  },
+  {
+    "Product": "Potato mash",
+    "Quantity": "1 cup",
+    "Calories": 100
+  },
+  {
+    "Product": "Potato fried",
+    "Quantity": "1 cup",
+    "Calories": 200
+  },
+  {
+    "Product": "Sandwich large",
+    "Quantity": 1,
+    "Calories": 250
+  },
+  {
+    "Product": "Hamburger",
+    "Quantity": "1 pc",
+    "Calories": 250
+  },
+  {
+    "Product": "Steak & Salad",
+    "Quantity": "1 plate",
+    "Calories": 300
+  },
+  {
+    "Product": "Spaghetti & meat, sauce etc.",
+    "Quantity": "1 plate",
+    "Calories": 450
+  },
+  {
+    "Product": "Baked dish",
+    "Quantity": "1 helping",
+    "Calories": 400
+  },
+  {
+    "Product": "Fried Chicken",
+    "Quantity": "1 helping",
+    "Calories": 200
+  },
+  {
+    "Product": "Chinese noodles",
+    "Quantity": "1 plate",
+    "Calories": 450
+  },
+  {
+    "Product": "Chinese Fried Rice",
+    "Quantity": "1 plate",
+    "Calories": 450
+  },
+  {
+    "Product": "Pizza",
+    "Quantity": "1 plate",
+    "Calories": 400
+  }
+]
