@@ -11,23 +11,30 @@ public class MovementByButtons : MonoBehaviour {
     private bool grounded = false;
     public float speed, jumpForce;
     string direction;
-    bool facingRight;
+    bool facingRight, jump;
 
     // Use this for initialization
     void Start () {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
-	
-	// Update is called once per frame
-	void FixedUpdate () {
 
+    private void Update()
+    {
         grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
+        if (jump)
+        {
+            rb.AddForce(new Vector2(rb.velocity.x, jumpForce));
+            jump = false;
+        }
+    }
+    // Update is called once per frame
+    void FixedUpdate () {
 
         if (direction == "Left")
         {
-            Vector2 velocity = new Vector2(speed * Time.deltaTime, rb.velocity.y);
-            rb.MovePosition(rb.position - velocity * Time.fixedDeltaTime);
+            rb.velocity = new Vector2(-speed * Time.deltaTime, rb.velocity.y);
+            //rb.MovePosition(rb.position - velocity * Time.fixedDeltaTime);
             anim.SetTrigger("Walk");
             if (!facingRight)
             {
@@ -36,8 +43,8 @@ public class MovementByButtons : MonoBehaviour {
         }
         else if (direction == "Right")
         {
-            Vector2 velocity = new Vector2(speed * Time.deltaTime, rb.velocity.y);
-            rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
+            rb.velocity = new Vector2(speed * Time.deltaTime, rb.velocity.y);
+            //rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
             anim.SetTrigger("Walk");
             if (facingRight)
             {
@@ -46,6 +53,7 @@ public class MovementByButtons : MonoBehaviour {
         }
         else
         {
+            rb.velocity = new Vector2(0 * Time.deltaTime, rb.velocity.y);
             anim.SetTrigger("Idle");
         }
     }
@@ -59,9 +67,9 @@ public class MovementByButtons : MonoBehaviour {
     {
        if (grounded)
         {
+            jump = true;
             grounded = false;
             anim.SetTrigger("Jump");
-            rb.AddForce(new Vector2(0f, jumpForce));
         }
     }
 

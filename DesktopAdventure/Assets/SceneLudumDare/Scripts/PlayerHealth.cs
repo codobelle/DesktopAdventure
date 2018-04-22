@@ -11,6 +11,7 @@ public class PlayerHealth : MonoBehaviour
     public int waitingDie = 3;
     CircleCollider2D bc2d;
     Animator anim;
+
     void Awake()
     {
         source = GetComponent<AudioSource>();
@@ -27,6 +28,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (coll.gameObject.CompareTag("Enemy"))
         {
+            CaloriesManager.currentKcal = 0;
             source.PlayOneShot(Death, 0.7F);
             anim.SetTrigger("Die");
             bc2d.isTrigger = true;
@@ -34,6 +36,14 @@ public class PlayerHealth : MonoBehaviour
         }
         if (coll.gameObject.CompareTag("SweetHeart"))
             anim.SetTrigger("SweetFind");
+
+        if (coll.gameObject.CompareTag("Product"))
+        {
+            Destroy(coll.gameObject);
+            CaloriesManager.currentKcal += int.Parse(coll.gameObject.GetComponentInChildren<TextMesh>().text);
+            CaloriesManager.addedKcal = true;
+            print(coll.gameObject.GetComponentInChildren<TextMesh>().text);
+        }
     }
     IEnumerator WaitForDie()
     {

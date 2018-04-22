@@ -9,14 +9,15 @@ public class PlayerController : MonoBehaviour
     public bool facingRight = true;
     [HideInInspector]
     public bool jump = false, jumped = false;
-    public float maxSpeed = 5f;
-    public float jumpForce = 1000f;
+    public float maxSpeed, speed = 10f, jumpSpeed = 15f;
+    public float jumpForce = 1f;
     public Transform groundCheck;
 
 
     private bool grounded = false;
     private Animator anim;
     private Rigidbody2D rb2d;
+    float h;
 
 
     // Use this for initialization
@@ -26,22 +27,12 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
     }
-
-    //void OnCollisionEnter2D(Collision2D coll)
-    //{
-    //    Debug.Log(coll.collider.gameObject.layer);
-    //    if (coll.collider.gameObject.layer == LayerMask.NameToLayer("Ground"))
-    //    {
-    //        grounded = true;
-
-    //        print("Collision");
-    //    }
-    //}
-
+    
 
     // Update is called once per frame
     void Update()
     {
+
         grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
         if (Input.GetButtonDown("Jump") && grounded)
         {
@@ -52,7 +43,49 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        float h = Input.GetAxis("Horizontal");
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Stationary)
+        {
+            anim.SetTrigger("Walk");
+            Vector2 touchPosition = Input.GetTouch(0).position;
+            double halfScreen = Screen.width / 2.0;
+
+            //Check if it is left or right?
+            if (touchPosition.x < halfScreen)
+            {
+                //transform.Translate(Vector3.left * speed * Time.deltaTime);
+                Vector2 velocity = new Vector2(maxSpeed * Time.deltaTime, rb2d.velocity.y);
+                rb2d.MovePosition(rb2d.position - velocity * Time.fixedDeltaTime);
+                if (facingRight)
+                {
+                    Flip();
+                }
+            }
+            else if (touchPosition.x > halfScreen)
+            {
+                //transform.Translate(Vector3.right * speed * Time.deltaTime);
+                Vector2 velocity = new Vector2(maxSpeed * Time.deltaTime, rb2d.velocity.y);
+                rb2d.MovePosition(rb2d.position + velocity * Time.fixedDeltaTime);
+                if (!facingRight)
+                {
+                    Flip();
+                }
+            }
+            if (Input.touchCount == 2 && grounded)
+            {
+                print("Jump");
+                //transform.Translate(Vector3.up * jumpSpeed * Time.deltaTime);
+                source.PlayOneShot(Jump, 0.3F);
+                jump = true;
+
+            }
+
+        }
+        else
+        {
+            anim.SetTrigger("Idle");
+        }
+        /////////////////////////////////////////////////////////////////////////////////////////
+        h = Input.GetAxis("Horizontal");
         if (h != 0)
         {
             anim.SetTrigger("Walk");
@@ -65,7 +98,7 @@ public class PlayerController : MonoBehaviour
             Flip();
         else if (h < 0 && facingRight)
             Flip();
-
+        ////////////////////////////////////////////////////////////////////////////////////////////
         if (jump)
         {
             jump = false;
@@ -76,7 +109,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
     void Flip()
     {
         facingRight = !facingRight;
@@ -84,6 +116,5 @@ public class PlayerController : MonoBehaviour
         theScale.x *= -1;
         transform.localScale = theScale;
     }
-
 }
 
