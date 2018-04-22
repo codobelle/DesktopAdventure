@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 5ff3125b2aa8d5f4c9b108a3e34e5fe5
+timeCreated: 1524419845
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Remissis
+  fontNames:
+  - Remissis
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
