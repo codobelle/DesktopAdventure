@@ -5,57 +5,41 @@ using UnityEngine;
 
 public class ProductData : MonoBehaviour
 {
-    private string gameDataProjectFilePath = "/data.json";
-    public string url = "https://drive.google.com/uc?export=download&id=1MUeca24V1MB3vYSdXrOcUHr--rW_rFhr";
+    private string gameDataProjectFilePath = "/StreamingAssets/data.json";
+    public string url = "https://drive.google.com/uc?export=download&id=1dRnPu0jgBq8hA4Lbu8rumuTq4tClHYtZ";
     string jsonString;
-    public Product product;
+    Product product;
     IEnumerator Start()
     {
-        WWW www = new WWW(url);
-        using (www = new WWW(url))
+        using (WWW www = new WWW(url))
         {
             yield return www;
-            if (www.error != null)
+            if (www.error == null)
             {
-                LoadGameData();
+                string json = www.text;
+                print("fromServer");
+                product = JsonUtility.FromJson<Product>(json);
             }
             else
             {
-                jsonString = www.text;
-                print(jsonString);
-                product = JsonUtility.FromJson<Product>(jsonString);
-                print(product);
+                Debug.Log("ERROR: " + www.error);
+                string filePath = Application.dataPath + gameDataProjectFilePath;
+
+                if (File.Exists(filePath))
+                {
+                    string json = File.ReadAllText(filePath);
+                    product = JsonUtility.FromJson<Product>(json);
+                }
+                else
+                {
+                    Debug.LogError("Cannot load game data!");
+                }
             }
-            
         }
     }
     // Update is called once per frame
     void Update()
     {
-
-    }
-    private void LoadGameData()
-    {
-        string filePath = Application.dataPath + gameDataProjectFilePath;
-
-        if (File.Exists(filePath))
-        {
-            string dataAsJson = File.ReadAllText(filePath);
-            product = JsonUtility.FromJson<Product>(dataAsJson);
-        }
-        else
-        {
-            product = new Product();
-        }
-    }
-
-    private void SaveGameData()
-    {
-
-        string dataAsJson = JsonUtility.ToJson(product);
-
-        string filePath = Application.dataPath + gameDataProjectFilePath;
-        File.WriteAllText(filePath, dataAsJson);
 
     }
 }
