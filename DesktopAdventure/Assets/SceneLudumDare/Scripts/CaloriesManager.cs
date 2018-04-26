@@ -14,7 +14,7 @@ public class CaloriesManager : MonoBehaviour {
     // Use this for initialization
     void Start () {
 
-        maxKcal.text = PlayerInput.maxKcal.ToString();
+        maxKcal.text = ProfilesManager.maxKcal.ToString();
     }
 	
 	// Update is called once per frame
