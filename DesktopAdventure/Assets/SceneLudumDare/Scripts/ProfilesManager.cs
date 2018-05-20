@@ -12,7 +12,7 @@ public class ProfilesManager : MonoBehaviour {
     User userData;
     User.UserData user;
     UserManager userManager;
-    public static float minKcal = 1700, maxKcal = 2000;
+    public static float minKcal = 1700, maxKcal = 2500;
     bool isMale = true;
     int years, typeOfActivity, height, weight;
     // Use this for initialization

@@ -5,6 +5,8 @@ using UnityEngine.EventSystems;
 
 public class MovementByButtons : MonoBehaviour {
 
+    public AudioClip JumpSound;
+    private AudioSource source;
     public Transform groundCheck;
     private Animator anim;
     Rigidbody2D rb;
@@ -17,6 +19,11 @@ public class MovementByButtons : MonoBehaviour {
     void Start () {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+    }
+
+    void Awake()
+    {
+        source = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -70,6 +77,7 @@ public class MovementByButtons : MonoBehaviour {
             jump = true;
             grounded = false;
             anim.SetTrigger("Jump");
+            source.PlayOneShot(JumpSound, 0.7F);
         }
     }
 

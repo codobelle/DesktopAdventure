@@ -23,7 +23,7 @@ public class CaloriesManager : MonoBehaviour {
         if (addedKcal)
         {
             calorieLevelIndicator.anchoredPosition = 
-                new Vector2(currentKcal * 1024 / ProfilesManager.maxKcal, calorieLevelIndicator.anchoredPosition.y);
+                new Vector2(currentKcal * 860 / ProfilesManager.maxKcal, calorieLevelIndicator.anchoredPosition.y);
             addedKcal = false;
         }
         

@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public AudioClip Death;
+    public AudioClip Death, Eat;
     private AudioSource source;
     int sceneIndex;
     public int waitingDie = 3;
@@ -40,6 +40,7 @@ public class PlayerHealth : MonoBehaviour
         if (coll.gameObject.CompareTag("Product"))
         {
             Destroy(coll.gameObject);
+            source.PlayOneShot(Eat, 0.7F);
             CaloriesManager.currentKcal += int.Parse(coll.gameObject.GetComponentInChildren<TextMesh>().text);
             CaloriesManager.addedKcal = true;
             print(coll.gameObject.GetComponentInChildren<TextMesh>().text);
